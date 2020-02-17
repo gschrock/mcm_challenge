@@ -10,29 +10,32 @@ export default function App() {
     [key: string]: string | boolean;
   } | null>(null);
 
-  const handleSetLoanResponse = (
-    response: {
-      [key: string]: string | boolean;
-    } | null
-  ) => {
+  const handleSetLoanResponse = (response: {
+    [key: string]: string | boolean;
+  }) => {
     setLoanResponse(response);
   };
 
   return (
-    <Router basename="/">
-      {/* A <Switch> looks through its children <Route>s and
+    <div className={"App"}>
+      <Router basename="/">
+        {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
-      <Switch>
-        <Route exact path="/">
-          <Landing handleSetLoanResponse={handleSetLoanResponse} />
-        </Route>
-        <Route path="/denied">
-          <Disqualification loanResponse={loanResponse} />
-        </Route>
-        <Route path="/success">
-          <NewAccount />
-        </Route>
-      </Switch>
-    </Router>
+        <Switch>
+          <Route exact path="/">
+            <Landing
+              loanResponse={loanResponse}
+              handleSetLoanResponse={handleSetLoanResponse}
+            />
+          </Route>
+          <Route path="/denied">
+            <Disqualification loanResponse={loanResponse} />
+          </Route>
+          <Route path="/success">
+            <NewAccount loanResponse={loanResponse} />
+          </Route>
+        </Switch>
+      </Router>
+    </div>
   );
 }

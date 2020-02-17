@@ -3,13 +3,19 @@ import { Button, Col, Form } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import validator from "validator";
 import mockFetch from "../mockFetch";
+import { marketingIpsum } from "./marketingIpsum";
 
 interface Props {
+  loanResponse: { [key: string]: string | boolean } | null;
   handleSetLoanResponse: (data: { [key: string]: string | boolean }) => void;
 }
 
-export const Landing: React.SFC<Props> = ({ handleSetLoanResponse }) => {
+export const Landing: React.SFC<Props> = ({
+  loanResponse,
+  handleSetLoanResponse
+}) => {
   let history = useHistory();
+
   const [values, setValues] = useState<{
     [key: string]: { value: string; valid: boolean };
   }>({
@@ -34,6 +40,14 @@ export const Landing: React.SFC<Props> = ({ handleSetLoanResponse }) => {
       valid: true
     }
   });
+
+  /**
+   * If user attempts to navigat back to layout view,
+   * redirect them accordingly back to where they originally
+   * came from.
+   */
+  if (loanResponse && !loanResponse.qualified) history.push("/denied");
+  if (loanResponse && loanResponse.qualified) history.push("/success");
 
   const handleSubmit = () => {
     const valid = isFormValid();
@@ -112,9 +126,10 @@ export const Landing: React.SFC<Props> = ({ handleSetLoanResponse }) => {
   };
 
   return (
-    <>
+    <div className={"container"}>
+      <div className={"marketing-ipsum ipsum-top"}>{marketingIpsum}</div>
       <Form.Row>
-        <Form.Group as={Col} md="3" controlId="validationCustom01">
+        <Form.Group as={Col} controlId="validationCustom01">
           <Form.Label>Auto Purchase Price</Form.Label>
           <Form.Control
             onChange={(e: React.FormEvent<HTMLInputElement>) => {
@@ -130,7 +145,7 @@ export const Landing: React.SFC<Props> = ({ handleSetLoanResponse }) => {
             Please provide a valid auto purchase price.
           </Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Col} md="3" controlId="validationCustom02">
+        <Form.Group as={Col} controlId="validationCustom02">
           <Form.Label>Auto Make</Form.Label>
           <Form.Control
             onChange={(e: React.FormEvent<HTMLInputElement>) => {
@@ -146,7 +161,7 @@ export const Landing: React.SFC<Props> = ({ handleSetLoanResponse }) => {
             Please provide an auto make.
           </Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Col} md="3" controlId="validationCustom03">
+        <Form.Group as={Col} controlId="validationCustom03">
           <Form.Label>Auto Model</Form.Label>
           <Form.Control
             onChange={(e: React.FormEvent<HTMLInputElement>) => {
@@ -164,9 +179,10 @@ export const Landing: React.SFC<Props> = ({ handleSetLoanResponse }) => {
         </Form.Group>
       </Form.Row>
       <Form.Row>
-        <Form.Group as={Col} md="3" controlId="validationCustom04">
+        <Form.Group as={Col} controlId="validationCustom04">
           <Form.Label>Estimated Yearly Income</Form.Label>
           <Form.Control
+            className={"custom-control"}
             onChange={(e: React.FormEvent<HTMLInputElement>) => {
               handleInputChange(e);
             }}
@@ -180,9 +196,14 @@ export const Landing: React.SFC<Props> = ({ handleSetLoanResponse }) => {
             Please provide an estimated yearly income.
           </Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Col} md="3" controlId="validationCustom05">
+        <Form.Group
+          as={Col}
+          style={{ paddingRight: "265px" }}
+          controlId="validationCustom05"
+        >
           <Form.Label>Estimated Credit Score</Form.Label>
           <Form.Control
+            className={"custom-control"}
             onChange={(e: React.FormEvent<HTMLInputElement>) => {
               handleInputChange(e);
             }}
@@ -197,9 +218,12 @@ export const Landing: React.SFC<Props> = ({ handleSetLoanResponse }) => {
           </Form.Control.Feedback>
         </Form.Group>
       </Form.Row>
-      <Button onClick={() => handleSubmit()} type="submit">
-        Submit form
-      </Button>
-    </>
+      <div className={"button-container"}>
+        <Button onClick={() => handleSubmit()} type="submit">
+          Submit form
+        </Button>
+      </div>
+      <div className={"marketing-ipsum ipsum-bottom"}>{marketingIpsum}</div>
+    </div>
   );
 };
