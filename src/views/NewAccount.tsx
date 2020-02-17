@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function NewAccount() {
-  return <div>New Account</div>;
-}
+export const NewAccount: React.SFC = () => {
+  return <div>Success</div>;
+};

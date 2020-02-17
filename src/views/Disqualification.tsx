@@ -1,5 +1,9 @@
 import React from "react";
 
-export default function Disqualification() {
-  return <div>Disqualified</div>;
+interface Props {
+  loanResponse: { [key: string]: string | boolean } | null;
 }
+
+export const Disqualification: React.SFC<Props> = ({ loanResponse }) => {
+  return <div>{loanResponse && loanResponse.message}</div>;
+};

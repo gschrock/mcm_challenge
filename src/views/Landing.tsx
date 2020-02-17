@@ -1,8 +1,15 @@
 import React, { useState } from "react";
 import { Button, Col, Form } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 import validator from "validator";
+import mockFetch from "../mockFetch";
 
-export default function Landing() {
+interface Props {
+  handleSetLoanResponse: (data: { [key: string]: string | boolean }) => void;
+}
+
+export const Landing: React.SFC<Props> = ({ handleSetLoanResponse }) => {
+  let history = useHistory();
   const [values, setValues] = useState<{
     [key: string]: { value: string; valid: boolean };
   }>({
@@ -30,9 +37,34 @@ export default function Landing() {
 
   const handleSubmit = () => {
     const valid = isFormValid();
-    console.log(values);
 
-    console.log("Valid! ", valid);
+    const mockedFetch = async () => {
+      await mockFetch({
+        price: values.price.value,
+        income: values.income.value,
+        score: values.score.value
+      })
+        .then((response: any) => {
+          if (response.status === 400) {
+            console.error(new Error("Bad Request"));
+          }
+          return response.json();
+        })
+        .then(data => {
+          if (data.qualified) {
+            handleSetLoanResponse(data);
+            history.push("/success");
+          }
+          if (!data.qualifed && data.message) {
+            handleSetLoanResponse(data);
+            history.push("/denied");
+          }
+        });
+    };
+
+    if (valid) {
+      mockedFetch();
+    }
   };
 
   const handleInputChange = (e: React.FormEvent<HTMLInputElement>) => {
@@ -170,4 +202,4 @@ export default function Landing() {
       </Button>
     </>
   );
-}
+};
