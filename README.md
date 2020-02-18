@@ -1,4 +1,30 @@
+To build and run: clone the repo, npm install, npm start, then navigate to a browser at http://localhost:3000
+
+Or view it deployed at: [mcm-challenge](https://mcm-challenge.surge.sh)
+
+- Client state handling is managed with hooks only. Due to the small scope of views required, Redux or React Context are not used and would probably be overkill for our needs.
+
+- Some non-comprehensive snapshot testing is accomplished using Jest + Enzyme. Ideally I'd want greater test coverage of the component state (use of hooks makes this difficult for now) and to mock the function behavior,especially the mockFetch function.
+
+- Routing is accomplished through use of React-Router-DOM library.
+
+- Validation of inputs is performed mostly by leveraging Validator library for sake of simplicity and speed of implementation.
+
+- Minimal styling is accomplished with React-Bootstrap, also for sake of simplicity and speed of implementation.
+
+- Ipusm is from [Riker Ipsum](http://rikeripsum.com/#!/) 🤩
+
+- After submitting form on initial landing page user is either:
+  1 - directed to success route with a username and password form that generates a simple alert on a successfully validated submit
+  2 - directed to denied route with a mock disqualification message
+  3 - given a console error warning with "Bad Request" if the value of the vehicle is over \$1M in value (which should most definitely be handled better in a true production app)
+
+Some screenshots of the landing page:
+![prevalidation](https://i.imgur.com/aIRE6eZ.png)
+![postvalidation](https://i.imgur.com/4nm4DW7.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+That means the following README documentation below still applies for getting the app running.
 
 ## Available Scripts
 

@@ -22,6 +22,7 @@ exports[`NewAccount view renders 1`] = `
     </FormLabel>
     <FormControl
       isInvalid={false}
+      name="username"
       onChange={[Function]}
       placeholder="Username (email)"
       required={true}

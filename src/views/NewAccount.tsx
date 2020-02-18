@@ -95,6 +95,7 @@ export const NewAccount: React.SFC<Props> = ({ loanResponse }) => {
           onChange={(e: React.FormEvent<HTMLInputElement>) => {
             handleInputChange(e);
           }}
+          name={"username"}
           isInvalid={!values.username.valid}
           type="text"
           placeholder="Username (email)"
