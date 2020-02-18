@@ -12,11 +12,11 @@ Or view it deployed at: [mcm-challenge](https://mcm-challenge.surge.sh)
 
 - Minimal styling is accomplished with React-Bootstrap, also for sake of simplicity and speed of implementation.
 
-- Ipusm is from [Riker Ipsum](http://rikeripsum.com/#!/) 🤩
+- Ipsum used for marketing and diqualification message is from [Riker Ipsum](http://rikeripsum.com/#!/) 🤩👍
 
-- After submitting form on initial landing page user is either:
-  1 - directed to success route with a username and password form that generates a simple alert on a successfully validated submit
-  2 - directed to denied route with a mock disqualification message
+- After submitting form on initial landing page user is either:  
+  1 - directed to success route with a username and password form that generates a simple alert on a successfully validated submit  
+  2 - directed to denied route with a mock disqualification message  
   3 - given a console error warning with "Bad Request" if the value of the vehicle is over \$1M in value (which should most definitely be handled better in a true production app)
 
 Some screenshots of the landing page:
@@ -24,7 +24,7 @@ Some screenshots of the landing page:
 ![postvalidation](https://i.imgur.com/4nm4DW7.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-That means the following README documentation below still applies for getting the app running.
+That means the following README documentation below still applies.
 
 ## Available Scripts
 
