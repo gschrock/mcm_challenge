@@ -6,6 +6,12 @@ import { Landing } from "./views/Landing";
 import { NewAccount } from "./views/NewAccount";
 
 export default function App() {
+  /**
+   * If this application were larger in scope Redux would
+   * probably be a good choice for handling state management
+   * across the application - however, due to the small scope,
+   * a single hook is sufficient.
+   */
   const [loanResponse, setLoanResponse] = useState<{
     [key: string]: string | boolean;
   } | null>(null);

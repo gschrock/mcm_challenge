@@ -1,0 +1,193 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Landing view renders 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="marketing-ipsum ipsum-top"
+  >
+    Earl Grey tea, watercress sandwiches... and Bularian canapés? Are you up for promotion? Mr. Worf, you sound like a man who's asking his friend if he can start dating his sister. A surprise party? Mr. Worf, I hate surprise parties. I would *never* do that to you.
+  </div>
+  <FormRow>
+    <FormGroup
+      as={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "displayName": "Col",
+          "render": [Function],
+        }
+      }
+      controlId="validationCustom01"
+    >
+      <FormLabel
+        column={false}
+        srOnly={false}
+      >
+        Auto Purchase Price
+      </FormLabel>
+      <FormControl
+        isInvalid={false}
+        name="price"
+        onChange={[Function]}
+        placeholder="Auto Purchase Price"
+        required={true}
+        type="text"
+      />
+      <Feedback
+        type="invalid"
+      >
+        Please provide a valid auto purchase price.
+      </Feedback>
+    </FormGroup>
+    <FormGroup
+      as={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "displayName": "Col",
+          "render": [Function],
+        }
+      }
+      controlId="validationCustom02"
+    >
+      <FormLabel
+        column={false}
+        srOnly={false}
+      >
+        Auto Make
+      </FormLabel>
+      <FormControl
+        isInvalid={false}
+        name="make"
+        onChange={[Function]}
+        placeholder="Auto Make"
+        required={true}
+        type="text"
+      />
+      <Feedback
+        type="invalid"
+      >
+        Please provide an auto make.
+      </Feedback>
+    </FormGroup>
+    <FormGroup
+      as={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "displayName": "Col",
+          "render": [Function],
+        }
+      }
+      controlId="validationCustom03"
+    >
+      <FormLabel
+        column={false}
+        srOnly={false}
+      >
+        Auto Model
+      </FormLabel>
+      <FormControl
+        isInvalid={false}
+        name="model"
+        onChange={[Function]}
+        placeholder="Auto Model"
+        required={true}
+        type="text"
+      />
+      <Feedback
+        type="invalid"
+      >
+        Please provide an auto model.
+      </Feedback>
+    </FormGroup>
+  </FormRow>
+  <FormRow>
+    <FormGroup
+      as={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "displayName": "Col",
+          "render": [Function],
+        }
+      }
+      controlId="validationCustom04"
+    >
+      <FormLabel
+        column={false}
+        srOnly={false}
+      >
+        Estimated Yearly Income
+      </FormLabel>
+      <FormControl
+        className="custom-control"
+        isInvalid={false}
+        name="income"
+        onChange={[Function]}
+        placeholder="Estimated Yearly Income"
+        required={true}
+        type="text"
+      />
+      <Feedback
+        type="invalid"
+      >
+        Please provide an estimated yearly income.
+      </Feedback>
+    </FormGroup>
+    <FormGroup
+      as={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "displayName": "Col",
+          "render": [Function],
+        }
+      }
+      controlId="validationCustom05"
+      style={
+        Object {
+          "paddingRight": "265px",
+        }
+      }
+    >
+      <FormLabel
+        column={false}
+        srOnly={false}
+      >
+        Estimated Credit Score
+      </FormLabel>
+      <FormControl
+        className="custom-control"
+        isInvalid={false}
+        name="score"
+        onChange={[Function]}
+        placeholder="Estimated Credit Score"
+        required={true}
+        type="text"
+      />
+      <Feedback
+        type="invalid"
+      >
+        Please provide an estimated credit score.
+      </Feedback>
+    </FormGroup>
+  </FormRow>
+  <div
+    className="button-container"
+  >
+    <Button
+      active={false}
+      className="button"
+      disabled={false}
+      onClick={[Function]}
+      type="submit"
+      variant="primary"
+    >
+      Submit form
+    </Button>
+  </div>
+  <div
+    className="marketing-ipsum ipsum-bottom"
+  >
+    Earl Grey tea, watercress sandwiches... and Bularian canapés? Are you up for promotion? Mr. Worf, you sound like a man who's asking his friend if he can start dating his sister. A surprise party? Mr. Worf, I hate surprise parties. I would *never* do that to you.
+  </div>
+</div>
+`;

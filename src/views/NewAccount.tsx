@@ -26,6 +26,10 @@ export const NewAccount: React.SFC<Props> = ({ loanResponse }) => {
     }
   });
 
+  /**
+   * If user attempts to navigate here without loan
+   * response data redirect them back to landing route.
+   */
   if (!loanResponse) history.push("/");
 
   const handleInputChange = (e: React.FormEvent<HTMLInputElement>) => {

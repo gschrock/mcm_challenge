@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NewAccount view renders 1`] = `
+<div
+  className="new-account-container"
+>
+  <FormGroup
+    as={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "displayName": "Col",
+        "render": [Function],
+      }
+    }
+    controlId="validationCustom01"
+  >
+    <FormLabel
+      column={false}
+      srOnly={false}
+    >
+      Username (email)
+    </FormLabel>
+    <FormControl
+      isInvalid={false}
+      onChange={[Function]}
+      placeholder="Username (email)"
+      required={true}
+      type="text"
+    />
+    <Feedback
+      type="invalid"
+    >
+      Please provide a valid email.
+    </Feedback>
+  </FormGroup>
+  <FormGroup
+    as={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "displayName": "Col",
+        "render": [Function],
+      }
+    }
+    controlId="validationCustom02"
+  >
+    <FormLabel
+      column={false}
+      srOnly={false}
+    >
+      Password
+    </FormLabel>
+    <FormControl
+      isInvalid={false}
+      name="password"
+      onChange={[Function]}
+      placeholder="Password"
+      required={true}
+      type="password"
+    />
+    <Feedback
+      type="invalid"
+    >
+      Password must contain 8 or more characters and include a number or special character.
+    </Feedback>
+  </FormGroup>
+  <FormGroup
+    as={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "displayName": "Col",
+        "render": [Function],
+      }
+    }
+    controlId="validationCustom03"
+  >
+    <FormLabel
+      column={false}
+      srOnly={false}
+    >
+      Repeat Password
+    </FormLabel>
+    <FormControl
+      isInvalid={false}
+      name="repeat"
+      onChange={[Function]}
+      placeholder="Repeat Password"
+      required={true}
+      type="password"
+    />
+    <Feedback
+      type="invalid"
+    >
+      Passwords must match and contain 8 or more characters and include a number or special character.
+    </Feedback>
+  </FormGroup>
+  <div
+    className="button-container password-button"
+  >
+    <Button
+      active={false}
+      disabled={false}
+      onClick={[Function]}
+      type="submit"
+      variant="primary"
+    >
+      Create account
+    </Button>
+  </div>
+</div>
+`;

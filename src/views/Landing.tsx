@@ -42,7 +42,7 @@ export const Landing: React.SFC<Props> = ({
   });
 
   /**
-   * If user attempts to navigat back to layout view,
+   * If user attempts to navigate back to layout view,
    * redirect them accordingly back to where they originally
    * came from.
    */
@@ -59,12 +59,25 @@ export const Landing: React.SFC<Props> = ({
         score: values.score.value
       })
         .then((response: any) => {
+          /**
+           * If this were a real fetch call we'd want
+           * more graceful error handling than this, but
+           * this is just to mock the 400 we want in this
+           * exercise.
+           *
+           * E.g. we could redirect to a "something went
+           * wrong" page, display a message to user, etc.
+           */
           if (response.status === 400) {
             console.error(new Error("Bad Request"));
           }
           return response.json();
         })
         .then(data => {
+          /**
+           * Depending on success or denial we redirect
+           * to corresponding view.
+           */
           if (data.qualified) {
             handleSetLoanResponse(data);
             history.push("/success");
@@ -219,7 +232,11 @@ export const Landing: React.SFC<Props> = ({
         </Form.Group>
       </Form.Row>
       <div className={"button-container"}>
-        <Button onClick={() => handleSubmit()} type="submit">
+        <Button
+          className={"button"}
+          onClick={() => handleSubmit()}
+          type="submit"
+        >
           Submit form
         </Button>
       </div>

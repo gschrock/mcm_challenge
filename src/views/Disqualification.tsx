@@ -7,6 +7,10 @@ interface Props {
 
 export const Disqualification: React.SFC<Props> = ({ loanResponse }) => {
   let history = useHistory();
+  /**
+   * If user attempts to navigate here without loan
+   * response data redirect them back to landing route.
+   */
   if (!loanResponse) history.push("/");
   return (
     <div

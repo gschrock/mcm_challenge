@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Disqualification view renders with disqualification message 1`] = `
+<div
+  className="container"
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "<strong>Does not qualify:</strong><br>Not qualified message.<br><strong>Customer Support: 1-800-777-7777</strong>",
+    }
+  }
+/>
+`;

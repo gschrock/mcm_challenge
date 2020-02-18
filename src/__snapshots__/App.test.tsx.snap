@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+<div
+  className="App"
+>
+  <BrowserRouter
+    basename="/"
+  >
+    <Switch>
+      <Route
+        exact={true}
+        path="/"
+      >
+        <Landing
+          handleSetLoanResponse={[Function]}
+          loanResponse={null}
+        />
+      </Route>
+      <Route
+        path="/denied"
+      >
+        <Disqualification
+          loanResponse={null}
+        />
+      </Route>
+      <Route
+        path="/success"
+      >
+        <NewAccount
+          loanResponse={null}
+        />
+      </Route>
+    </Switch>
+  </BrowserRouter>
+</div>
+`;
